@@ -22,24 +22,32 @@ export default {
             <small class="card-text fw-bold">
                 {{ project.type.name }}
             </small>
+            <h6>Linguaggi utilizzati:</h6>
             <div>
-                <div 
-                    v-for="technology in project.technologies" 
-                    :key="technology.id" 
-                    class="badge me-2"
+                <div v-for="technology in project.technologies" :key="technology.id" class="badge me-2"
                     :style="`background-color: ${technology.color}`">
-                        {{ technology.name }}
+                    {{ technology.name }}
                 </div>
             </div>
+            <h6>Descrizione:</h6>
             <p class="card-text">{{ project.description }}</p>
         </div>
     </div>
 </template>
 
 <style lang="scss">
-img {
-    min-height: 208.5px;
-    object-fit: cover;
-    object-position: top left;
+.card {
+    height: 100%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+    img {
+        min-height: 208.5px;
+        object-fit: cover;
+        object-position: top left;
+    }
+
+    h6 {
+        margin-top:10px;
+    }
 }
 </style>
