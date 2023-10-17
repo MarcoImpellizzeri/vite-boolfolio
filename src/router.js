@@ -3,6 +3,7 @@ import {createRouter, createWebHistory} from "vue-router"
 //import delle pagine
 import Home from "./pages/Home.vue"
 import Projects from "./pages/Projects.vue"
+import ProjectShow from "./pages/ProjectShow.vue"
 
 const routes = [
     {
@@ -14,6 +15,11 @@ const routes = [
         path: '/projects',
         name: 'projects',
         component: Projects,
+    },
+    {
+        path: '/project/:slug',
+        name: 'project.show',
+        component: ProjectShow,
     }
 ]
 
