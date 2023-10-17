@@ -25,9 +25,14 @@ export default {
 </script>
 
 <template>
-    <div class="container my-show-container pb-5 px-0 my-5">
+    <div class="container my-show-container px-0 my-5">
         <img v-if="projects.image" :src="getImageUrl(projects)" class="card-img-top" alt="image not found">
-        <h1 class="fw-bold text-uppercase m-0">{{ projects.title }}</h1>
+        <div class="d-flex justify-content-between">
+            <h1 class="ps-3 fw-bold text-uppercase m-0">{{ projects.title }}</h1>
+            <div class="d-flex justify-content-end">
+                <a class="github" :href="projects.github_url" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
         <div class="p-5 d-flex">
             <div class="container-left">
                 <h5>Descrizione:</h5>
@@ -60,6 +65,12 @@ export default {
 
     .container-right {
         margin-left: 10px;
+    }
+
+    .github {
+        padding: 0 1rem;
+        font-size: 1.9rem;
+        color: black;
     }
 }
 </style>
