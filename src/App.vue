@@ -1,51 +1,39 @@
 <script>
-import axios from 'axios';
-import ProjectCard from "./components/ProjectCard.vue";
 
 export default {
-  components: {
-    ProjectCard,
-  },
-  data() {
-    return {
-      projects: [],
-      pagination: {}
-    }
-  },
-  methods: {
-    fetchData() {
-      axios.get('http://127.0.0.1:8000/api/projects')
-        .then((response) => {
-          // salviamo la lista dei progetti
-          this.projects = response.data.data;
 
-          // cancello il data da response.data.data
-          delete response.data.data;
-
-          // salvo la paginazione dei miei progetti
-          this.pagination = response.data;
-          console.log(response);
-        })
-    }
-  },
-  mounted() {
-    this.fetchData();
-  }
 }
 </script>
 
 <template>
-  <main>
-    <div class="container py-5">
-      <h1 class="text-center text-uppercase pb-5">I miei progetti</h1>
-
-      <div class="row row-cols-3 gy-5">
-        <div class="col" v-for="project in projects" :key="project.id">
-          <ProjectCard :project="project" />
-        </div>
-      </div>
+  <header>
+    <div class="container-fluid">
+      <nav class="container py-3">
+        <ul class="d-flex list-unstyled mb-0">
+          <li class="me-4">
+            <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+          </li>
+          <li>
+            <RouterLink :to="{ name: 'projects' }">Progetti</RouterLink>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <router-view />
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.container-fluid {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+
+  a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: black;
+  }
+}
+</style>
