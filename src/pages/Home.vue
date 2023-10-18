@@ -1,9 +1,11 @@
 <script>
 import SectionProjectHome from '../components/SectionProjectHome.vue';
+import SectionLenguagesHome from '../components/SectionLenguagesHome.vue';
 
 export default {
     components: {
         SectionProjectHome,
+        SectionLenguagesHome,
     }
 }
 </script>
@@ -53,9 +55,9 @@ export default {
             </div>
         </div>
     </div>
-    <div class="container">
-        <SectionProjectHome />
-    </div>
+
+    <SectionLenguagesHome />
+    <SectionProjectHome />
 </template>
 
 <style lang="scss" scoped>

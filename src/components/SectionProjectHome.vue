@@ -37,7 +37,7 @@ export default {
 <template>
     <div class="container">
         <div class="container py-5">
-            <h2 class="text-center text-uppercase pb-5">I miei progetti</h2>
+            <h2 class="text-center pb-5">I miei progetti</h2>
             <div class="row row-cols-3 gy-5">
                 <div class="col" v-for="project in projects" :key="project.id">
                     <ProjectCard :project="project" />
