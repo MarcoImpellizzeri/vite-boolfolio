@@ -45,6 +45,11 @@ export default {
 .card {
     height: 100%;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: transform 0.3s ease-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
     a {
         text-decoration: none;
